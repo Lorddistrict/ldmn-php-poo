@@ -1,0 +1,14 @@
+{
+    "name": "etienne/ldmn-php-poo",
+    "type": "project",
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
+    },
+    "authors": [
+        {
+            "name": "Lorddistrict",
+            "email": "etienne.crespi@laposte.net"
+        }
+    ],
+    "require": {}
+}
