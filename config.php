@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Classes\SchoolClass;
 use App\Controllers\StudentsController;
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
