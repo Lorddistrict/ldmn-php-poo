@@ -5,14 +5,14 @@ namespace App\Controllers;
 
 use App\Classes\Boy;
 
-class StudentsController
+class StudentsController extends AbstractController
 {
-    public function index(Boy $boy)
+    public static function index(Boy $boy)
     {
-        echo 'Hello ' . $boy->getFirstName() . ' ' . $boy->getLastName() . '<br>';
+        return $boy;
     }
 
-    public function test() {
+    public static function test() {
         echo 'Test';
     }
 }
