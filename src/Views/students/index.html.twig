@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Students
+{% endblock %}
+
+{% block content %}
+
+    <style>
+        .content { position: relative; display: flex; flex-wrap: wrap; }
+        .box {
+            border: 1px black solid;
+            border-radius: 3px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            margin: 7px;
+            padding: 7px;
+            width: 200px;
+        }
+    </style>
+
+    <div class="mt-lg-3 mb-lg-3">
+        <h1>Students - Subject : {{ mathsExam.subject }}</h1>
+    </div>
+
+    {% set imgId = 1 %}
+
+    <div class="content">
+        {% for mark in mathsExam.marks %}
+            <div class="box">
+                <div class="box-top mb-2">
+                    <img src="https://picsum.photos/185?random={{ imgId }}" alt="student">
+                </div>
+                <div class="box-bottom">
+                    <b>First name :</b> {{ mark.student.firstName }}<br>
+                    <b>Last name :</b> {{ mark.student.lastName }}<br>
+                    <b>Note :</b> {{ mark.mark }}/20<br>
+                </div>
+            </div>
+            {% set imgId = imgId + 1 %}
+        {% endfor %}
+    </div>
+
+{% endblock %}
