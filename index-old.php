@@ -3,10 +3,10 @@ declare(strict_types=1);
 
 use App\Classes\Boy;
 use App\Classes\Exam;
-use App\Classes\Girl;
+use App\Classes\Teacher;
 use App\Classes\Mark;
 use App\Classes\SchoolClass;
-use App\Classes\Student;
+use App\Classes\Human;
 
 require __DIR__.'/init.php';
 
@@ -24,7 +24,7 @@ for ($i = 0; $i < 3; $i++) {
     // Students
     for ($y = 0; $y < 5; $y++) {
         $schoolClass->joinSchoolClass(new Boy($faker->uuid, $faker->firstName, $faker->lastName));
-        $schoolClass->joinSchoolClass(new Girl($faker->uuid, $faker->firstName, $faker->lastName));
+        $schoolClass->joinSchoolClass(new Teacher($faker->uuid, $faker->firstName, $faker->lastName));
     }
 
     /** @var SchoolClass[] $schoolClasses */
@@ -34,8 +34,8 @@ for ($i = 0; $i < 3; $i++) {
 $mathsExam = new Exam($faker->uuid, 'Maths');
 
 /**
- * @var int $key
- * @var Student $student
+ * @var int   $key
+ * @var Human $student
  */
 foreach ($schoolClasses[0]->getStudents() as $student) {
     $mathsExam->addMarkToExam(new Mark($faker->uuid, $faker->numberBetween(0,20), $student));

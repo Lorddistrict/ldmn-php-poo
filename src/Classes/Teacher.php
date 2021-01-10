@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Classes;
 
-class Boy extends Student
+class Teacher extends Human
 {
 
 }

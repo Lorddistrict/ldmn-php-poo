@@ -7,16 +7,16 @@ class Mark
 {
     private string  $identifier;
     private float   $mark;
-    private Student $student;
+    private Human $student;
 
     /**
      * Mark constructor.
      *
-     * @param string  $identifier
-     * @param float   $mark
-     * @param Student $student
+     * @param string $identifier
+     * @param float  $mark
+     * @param Human  $student
      */
-    public function __construct(string $identifier, float $mark, Student $student)
+    public function __construct(string $identifier, float $mark, Human $student)
     {
         $this->identifier = $identifier;
         $this->mark       = $mark;
@@ -56,17 +56,17 @@ class Mark
     }
 
     /**
-     * @return Student
+     * @return Human
      */
-    public function getStudent(): Student
+    public function getStudent(): Human
     {
         return $this->student;
     }
 
     /**
-     * @param Student $student
+     * @param Human $student
      */
-    public function setStudent(Student $student): void
+    public function setStudent(Human $student): void
     {
         $this->student = $student;
     }

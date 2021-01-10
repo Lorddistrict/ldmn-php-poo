@@ -52,9 +52,9 @@ class SchoolClass
     }
 
     /**
-     * @param Student $student
+     * @param Human $student
      */
-    public function joinSchoolClass(Student $student): void
+    public function joinSchoolClass(Human $student): void
     {
         array_push($this->students, $student);
     }
