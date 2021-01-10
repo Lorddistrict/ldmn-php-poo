@@ -16,5 +16,7 @@
             "email": "etienne.crespi@laposte.net"
         }
     ],
-    "require": {}
+    "require": {
+        "php-di/php-di": "^6.3"
+    }
 }
