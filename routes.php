@@ -6,12 +6,12 @@ use App\Controllers\StudentsController;
 use App\Core\Route;
 
 // Index default route
-Route::set('', function($container) {
+Route::set('', function ($container) {
     $container->call([DefaultController::class, 'index']);
 });
 
 // Student
-Route::set('students/index', function($container) {
+Route::set('students/index', function ($container) {
     $container->call([StudentsController::class, 'index']);
 });
 

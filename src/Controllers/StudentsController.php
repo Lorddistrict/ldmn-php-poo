@@ -47,7 +47,7 @@ class StudentsController
         foreach ($schoolClasses as $schoolClass) {
             /** @var Student $student */
             foreach ($schoolClass->getStudents() as $student) {
-                $mathsExam->addMarkToExam(new Mark($faker->uuid, $faker->numberBetween(0,20), $student));
+                $mathsExam->addMarkToExam(new Mark($faker->uuid, $faker->numberBetween(0, 20), $student));
             }
         }
 

@@ -5,5 +5,4 @@ namespace App\Classes;
 
 class Student extends Human
 {
-
 }

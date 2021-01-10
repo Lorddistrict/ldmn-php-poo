@@ -5,5 +5,4 @@ namespace App\Classes;
 
 class Teacher extends Human
 {
-
 }
