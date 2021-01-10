@@ -13,8 +13,14 @@ class Route
     {
         self::$validRoutes = $route;
 
+        // PHP DI
+        $containerBuilder = new ContainerBuilder();
+        $containerBuilder->useAutowiring(false);
+        $containerBuilder->addDefinitions('config.php');
+        $container = $containerBuilder->build();
+
         if ($_GET['url'] == $route) {
-            $fnc->__invoke();
+            $fnc->__invoke($container);
         }
     }
 }

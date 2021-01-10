@@ -3,16 +3,20 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use App\Classes\Boy;
+use Twig\Environment;
 
-class StudentsController extends AbstractController
+class StudentsController
 {
-    public static function index(Boy $boy)
+    public static function index(Environment $twig)
     {
-        return $boy;
+        echo $twig->render('students/index.html.twig', [
+            'name' => 'Etienne'
+        ]);
     }
 
-    public static function test() {
-        echo 'Test';
+    public static function test(Environment $twig) {
+        echo $twig->render('students/test.html.twig', [
+            'name' => 'Arthur'
+        ]);
     }
 }
