@@ -1,5 +1,10 @@
 # LPMN - Simple POO / DI project
 
+# How to run it ?
+- docker-compose up -d
+- and...
+- that's all
+
 # Créer une application d'école
 - Définir une session de classe
 - Remplir avec des élèves et leurs informations
