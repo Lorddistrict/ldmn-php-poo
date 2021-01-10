@@ -12,10 +12,17 @@ use Twig\Environment;
 
 class StudentsController
 {
-    public static function index(Environment $twig)
+    /**
+     * @param Environment $twig
+     *
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public static function index(Environment $twig, Factory $factory): void
     {
         // Faker
-        $faker = Factory::create();
+        $faker = $factory::create('fr_FR');
 
         $schoolClasses = [];
 
@@ -43,8 +50,6 @@ class StudentsController
                 $mathsExam->addMarkToExam(new Mark($faker->uuid, $faker->numberBetween(0,20), $student));
             }
         }
-
-//        dd($schoolClasses, $mathsExam);
 
         echo $twig->render('students/index.html.twig', [
             'mathsExam' => $mathsExam,
