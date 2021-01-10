@@ -3,21 +3,16 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use App\Classes\Student;
+use App\Classes\Boy;
 
 class StudentsController
 {
-    private $student;
-
-    public function __construct(Student $student)
+    public function index(Boy $boy)
     {
-        $this->student = $student;
+        echo 'Hello ' . $boy->getFirstName() . ' ' . $boy->getLastName() . '<br>';
     }
 
-    public function index()
-    {
-        for ($i=0; $i<10; $i++) {
-            echo 'Hello ' . $this->student->getFirstName() . ' ' . $this->student->getLastName() . '<br>';
-        }
+    public function test() {
+        echo 'Test';
     }
 }
